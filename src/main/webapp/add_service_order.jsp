@@ -18,32 +18,34 @@
 <form action="${pageContext.request.contextPath}/add_service_order/form" method="post">
 
     <c:choose>
-        <c:when test="${requestScope.carId ==null}">
-            <label for="car">Car:</label>
-            <select id="car" name="carIdValue">
-                <c:forEach items="${requestScope.all_cars}" var="car">
-                    <option value="${car.id}">
-                        <c:out value="${car.name} ${car.registration}"/>
-                    </option>
-                </c:forEach>
-            </select>
-            <br/>
-        </c:when>
-        <c:otherwise>
-            <input type="number" value="${requestScope.carId}" name="carIdValue" hidden>
-        </c:otherwise>
+    <c:when test="${requestScope.carId ==null}">
+    <label for="car">Car:</label>
+    <select id="car" name="carIdValue">
+        <c:forEach items="${requestScope.all_cars}" var="car">
+            <option value="${car.id}">
+                <c:out value="${car.name} ${car.registration}"/>
+            </option>
+        </c:forEach>
+    </select>
+    <br/>
+    </c:when>
+    <c:otherwise>
+    <input type="number" value="${requestScope.carId}" name="carIdValue" hidden>
+    </c:otherwise>
     </c:choose>
 
-        <h2>Service Order form</h2>
-        <form action="${pageContext.request.contextPath}/car/form" method="post">
+    <h2>Service Order form</h2>
 
-    <label for="servisOrderContentInput">Content:</label> <input id="servisOrderContentInput" name="serviceOrderContent"><br/>
-    <label for="servisOrderDateTimeAddedInput">Date Time Added:</label> <input id="servisOrderDateTimeAddedInput" name="serviceOrderDateTimeAdded"><br/>
-    <label for="servisOrderDateTimeFinishedInput">Date Time Finished:</label> <input id="servisOrderDateTimeFinishedInput" name="servisOrderDateTimeFinished"><br/>
+        <label for="servisOrderContentInput">Content:</label>
+        <input id="servisOrderContentInput" name="serviceOrderContent"><br/>
+        <label for="servisOrderDateTimeAddedInput">Date Time Added:</label>
+        <input id="servisOrderDateTimeAddedInput" name="serviceOrderDateTimeAdded"><br/>
+        <label for="servisOrderDateTimeFinishedInput">Date Time Finished:</label>
+        <input id="servisOrderDateTimeFinishedInput" name="servisOrderDateTimeFinished"><br/>
 
 
-    <br/>
-    <input type="submit">
-</form>
+        <br/>
+        <input type="submit">
+    </form>
 </body>
 </html>
