@@ -33,7 +33,13 @@
             <input type="number" value="${requestScope.carId}" name="carIdValue" hidden>
         </c:otherwise>
     </c:choose>
-    <label for="servisOrderValueInput">ServiceOrder value:</label> <input id="servisOrderValueInput" name="serviceOrderValue"><br/>
+
+        <h2>Service Order form</h2>
+        <form action="${pageContext.request.contextPath}/car/form" method="post">
+
+    <label for="servisOrderContentInput">Content:</label> <input id="servisOrderContentInput" name="serviceOrderContent"><br/>
+    <label for="servisOrderDateTimeAddedInput">Date Time Added:</label> <input id="servisOrderDateTimeAddedInput" name="serviceOrderDateTimeAdded"><br/>
+    <label for="servisOrderDateTimeFinishedInput">Date Time Finished:</label> <input id="servisOrderDateTimeFinishedInput" name="servisOrderDateTimeFinished"><br/>
 
 
     <br/>
